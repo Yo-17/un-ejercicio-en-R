@@ -99,7 +99,11 @@ table_html <- html_table(tables[4], fill = TRUE)
 
 table_html
 
+#gsub
 
+xml_df$COUNTRY %>% gsub("USA", "United States",.) %>% 
+  gsub("UK", "United Kingdom",.) %>%
+  gsub("EU", "European Union",.)
 
 
 
