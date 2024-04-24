@@ -37,3 +37,23 @@ ggplot(sl_countries, aes(x = Percentage, y = CountryCode, fill = Oficial)) +
        x = "Porcentaje",
        y = "País") +
   theme_minimal()
+
+# Reto 02
+
+library(httr)
+library(rvest)
+
+url <- "https://www.glassdoor.com.mx/Sueldos/data-scientist-sueldo-SRCH_KO0,14.htm"
+glassdoor_response <- GET(url, add_headers('user-agent' = 'data science student (yolandamtz17@gmail.com)'))
+
+glassdoor_html <- content(glassdoor_response, as = "text", encoding = "UTF-8")
+glassdoor_parsed <- read_html(glassdoor_html)
+
+tables <- html_nodes(glassdoor_parsed, "table")
+
+## El Reto no se pudo hacer por que se necesitan varios permisos y el URL no trae la tabla como tal
+
+
+# Reto 03
+
+
